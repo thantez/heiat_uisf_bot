@@ -8,7 +8,7 @@ const telegraf = require('telegraf')
     , adminID = process.env.adminID
     , markup = require('telegraf/markup')
     , extra = require('telegraf/extra')
-    , bot = new telegraf(require('./config').token)
+    , bot = new telegraf(Token)
     , stage = new Stage();
 //#region constant messages
 const joinMessage = `برای عضویت در مجموعه فرهنگی **هیئت شهدای گمنام دانشگاه اصفهان**، ابتدا نام خود را بفرستید.`
