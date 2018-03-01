@@ -1,0 +1,19 @@
+{
+  "name": "heiat_uisf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "telegram",
+    "telegraf"
+  ],
+  "author": "watchDots",
+  "license": "MIT",
+  "dependencies": {
+    "telegraf": "^3.18.0"
+  }
+}
