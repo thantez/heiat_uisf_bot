@@ -21,10 +21,7 @@ const joinMessage = `برای عضویت در مجموعه فرهنگی **هیئ
     , stopMessage = 'عملیات متوقف شد.'
 //#endregion constant messages
 //#region http
-require('http').createServer((req,res)=>{
-    res.end('hi');
-}).listen(process.env.PORT,()=>{
-    console.log('listen 3000')})
+
 //#endregion http
 //#endregion constants
 
