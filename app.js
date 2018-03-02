@@ -29,7 +29,7 @@ bot.start(({reply})=>{
     return reply(startMessage);
 })
 bot.catch((err) => {
-    console.log('Ooops', err)
+    console.log('Ooops you see this error : ', err)
 })
 //#endregion bot setting
 
@@ -73,7 +73,6 @@ join.on('text',(ctx)=>{
         mem.teach = message.text;
         return reply(`مشغول به تحصیل در چه ترمی هستید؟`);
     }
-    console.log(mem)
     if(!mem.term){
         let term = parseInt(message.text);
         if(isNaN(term))
