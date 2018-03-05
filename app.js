@@ -24,8 +24,8 @@ const joinMessage = `برای عضویت در مجموعه فرهنگی **هیئ
     , stopMessage = 'عملیات متوقف شد.'
 //#endregion constant messages
 //#region http
-bot.telegram.setWebhook(`${URL}/bot${API_TOKEN}`);
-bot.startWebhook(`/bot${API_TOKEN}`, null, PORT)
+bot.telegram.setWebhook(`${URL}/bot${Token}`);
+bot.startWebhook(`/bot${Token}`, null, PORT)
 //#endregion http
 //#endregion constants
 
