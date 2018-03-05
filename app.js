@@ -4,11 +4,11 @@ const telegraf = require('telegraf')
     , Stage = require('telegraf/stage')
     , Scene = require('telegraf/scenes/base')
     , { enter, leave } = Stage
-    , Token = process.env.TOKEN || ''
+    , TOKEN = process.env.TOKEN || ''
     , adminID = process.env.adminID
     , markup = require('telegraf/markup')
     , extra = require('telegraf/extra')
-    , bot = new telegraf(Token)
+    , bot = new telegraf(TOKEN)
     , stage = new Stage()
     , PORT = process.env.PORT || 3000;
     , URL = process.env.URL || 'https://mysterious-hollows-52337.herokuapp.com';
@@ -24,8 +24,8 @@ const joinMessage = `برای عضویت در مجموعه فرهنگی **هیئ
     , stopMessage = 'عملیات متوقف شد.'
 //#endregion constant messages
 //#region http
-bot.telegram.setWebhook(`${URL}/bot${Token}`);
-bot.startWebhook(`/bot${Token}`, null, PORT)
+bot.telegram.setWebhook(`${URL}/bot${TOKEN}`);
+bot.startWebhook(`/bot${TOKEN}`, null, PORT)
 //#endregion http
 //#endregion constants
 
