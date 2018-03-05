@@ -4,12 +4,14 @@ const telegraf = require('telegraf')
     , Stage = require('telegraf/stage')
     , Scene = require('telegraf/scenes/base')
     , { enter, leave } = Stage
-    , Token = process.env.TOKEN
+    , Token = process.env.TOKEN || ''
     , adminID = process.env.adminID
     , markup = require('telegraf/markup')
     , extra = require('telegraf/extra')
     , bot = new telegraf(Token)
-    , stage = new Stage();
+    , stage = new Stage()
+    , PORT = process.envenv.PORT || 3000;
+    , URL = process.envenv.URL || 'https://testappwebhook.herokuapp.com';
 //#region constant messages
 const joinMessage = `برای عضویت در مجموعه فرهنگی **هیئت شهدای گمنام دانشگاه اصفهان**، ابتدا نام خود را بفرستید.`
     , startMessage = `سلام. خوش آمدید.
@@ -21,7 +23,8 @@ const joinMessage = `برای عضویت در مجموعه فرهنگی **هیئ
     , stopMessage = 'عملیات متوقف شد.'
 //#endregion constant messages
 //#region http
-
+bot.telegram.setWebhook(`${URL}/bot${API_TOKEN}`);
+bot.startWebhook(`/bot${API_TOKEN}`, null, PORT)
 //#endregion http
 //#endregion constants
 
@@ -148,4 +151,3 @@ contact.on('message',(ctx)=>{
 })
 //#endregion contact scene setting
 
-bot.startPolling()
