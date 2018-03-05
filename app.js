@@ -12,7 +12,7 @@ const telegraf = require('telegraf')
     , stage = new Stage()
     , PORT = process.envenv.PORT || 3000;
     , URL = process.envenv.URL || 'https://mysterious-hollows-52337.herokuapp.com';
-';
+
 //#region constant messages
 const joinMessage = `برای عضویت در مجموعه فرهنگی **هیئت شهدای گمنام دانشگاه اصفهان**، ابتدا نام خود را بفرستید.`
     , startMessage = `سلام. خوش آمدید.
