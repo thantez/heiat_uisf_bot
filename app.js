@@ -14,7 +14,7 @@ const telegraf = require('telegraf')
     , URL = process.env.URL || 'https://mysterious-hollows-52337.herokuapp.com';
 
 //#region constant messages
-const joinMessage = `برای عضویت در مجموعه فرهنگی **هیئت شهدای گمنام دانشگاه اصفهان**، ابتدا نام خود را بفرستید.`
+const joinMessage = `برای عضویت در مجموعه فرهنگی **هیئت دانشجویی شهدای گمنام دانشگاه اصفهان**، ابتدا نام خود را بفرستید.`
     , startMessage = `سلام. خوش آمدید.
     برای پر کردن فرم عضویت در هیئت، /join را ارسال فرمایید.
     برای بیان انتقادات و پیشنهادات، /contact را ارسال فرمایید.
