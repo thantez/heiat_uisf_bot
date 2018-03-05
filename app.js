@@ -10,7 +10,7 @@ const telegraf = require('telegraf')
     , extra = require('telegraf/extra')
     , bot = new telegraf(TOKEN)
     , stage = new Stage()
-    , PORT = process.env.PORT || 3000;
+    , PORT = process.env.PORT || 3000
     , URL = process.env.URL || 'https://mysterious-hollows-52337.herokuapp.com';
 
 //#region constant messages
