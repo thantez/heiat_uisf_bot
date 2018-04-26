@@ -59,6 +59,7 @@ join.on('text', (ctx) => {
     let session = ctx.session, message = ctx.message, reply = ctx.reply, from = ctx.from;
     if (message.text == '/cancel') {
         ctx.scene.leave();
+        session.mem = {};
         return reply(stopMessage,extra.markup(markup.removeKeyboard()));
     }
     if (message.entities) {
