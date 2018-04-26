@@ -141,7 +141,7 @@ contact.enter(({ reply }) => reply(`پیام خود را وارد کنید.`));
 contact.command('cancel', (ctx) => {
     ctx.scene.leave();
     ctx.session = {};
-    return ctx.reply(stopMessage,extra.markup(markup.removeKeyboard())
+    return ctx.reply(stopMessage,extra.markup(markup.removeKeyboard()))
 });
 contact.on('message', (ctx) => {
     let message = ctx.message;
