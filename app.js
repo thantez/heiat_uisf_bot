@@ -81,8 +81,7 @@ join.on('text', (ctx) => {
         return reply(`مشغول به تحصیل در چه ترمی هستید؟`);
     }
     if (!mem.term) {
-        let term = parseInt(message.text);
-        mem.term = term;
+        mem.term = message.text;
         if (from.username == undefined) {
             return reply(`لطفا با کمک دکمه های زیر شماره همراه خود را به اشتراک بگذارید.(شما ID تلگرام برای تماس ندارید)`,
                 extra.markup((markup) => {
@@ -106,7 +105,6 @@ join.on('text', (ctx) => {
         }
     }
     if (!mem.contact) {
-        console.log(message.text);
         if (message.text === 'اشتراک ID.') {
             mem.contact = '@' + from.username;
         }
