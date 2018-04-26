@@ -32,8 +32,8 @@ bot.startWebhook(`/bot${TOKEN}`, null, PORT)
 //#region bot setting
 bot.use(session())
 bot.use(stage.middleware())
-bot.start(({ replyWithMarkdown }) => {
-    return replyWithMarkdown(startMessage);
+bot.start((ctx) => {
+    return ctx.replyWithMarkdown(startMessage);
 })
 bot.catch((err) => {
     console.log('Ooops you see this error : ', err)
