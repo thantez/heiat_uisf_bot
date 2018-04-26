@@ -106,7 +106,8 @@ join.on('text', (ctx) => {
         }
     }
     if (!mem.contact) {
-        if (message.text == 'اشتراک ID.') {
+        console.log(message.text);
+        if (message.text === 'اشتراک ID.') {
             mem.contact = '@' + from.username;
         }
         else {
