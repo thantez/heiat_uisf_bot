@@ -11,7 +11,7 @@ const telegraf = require('telegraf')
     , bot = new telegraf(TOKEN)
     , stage = new Stage()
     , PORT = process.env.PORT || 3000
-    , URL = process.env.URL || 'https://mysterious-hollows-52337.herokuapp.com'; ''
+    , URL = process.env.URL;
 
 //#region constant messages
 const joinMessage = `برای عضویت در **هیئت دانشجویی شهدای گمنام دانشگاه اصفهان**، ابتدا نام خود را بفرستید.`
@@ -32,8 +32,8 @@ bot.startWebhook(`/bot${TOKEN}`, null, PORT)
 //#region bot setting
 bot.use(session())
 bot.use(stage.middleware())
-bot.start(({ reply }) => {
-    return reply(startMessage);
+bot.start(({ replyWithMarkdown }) => {
+    return replyWithMarkdown(startMessage);
 })
 bot.catch((err) => {
     console.log('Ooops you see this error : ', err)
@@ -140,7 +140,6 @@ bot.command('contact', (ctx) => ctx.scene.enter('contact'))
 contact.enter(({ reply }) => reply(`پیام خود را وارد کنید.`));
 contact.command('cancel', (ctx) => {
     ctx.scene.leave();
-    ctx.session = {};
     return ctx.reply(stopMessage,extra.markup(markup.removeKeyboard()))
 });
 contact.on('message', (ctx) => {
