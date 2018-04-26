@@ -11,7 +11,7 @@ const telegraf = require('telegraf')
     , bot = new telegraf(TOKEN)
     , stage = new Stage()
     , PORT = process.env.PORT || 3000
-    , URL = process.env.URL || 'https://mysterious-hollows-52337.herokuapp.com';
+    , URL = process.env.URL || 'https://mysterious-hollows-52337.herokuapp.com'; ''
 
 //#region constant messages
 const joinMessage = `برای عضویت در **هیئت دانشجویی شهدای گمنام دانشگاه اصفهان**، ابتدا نام خود را بفرستید.`
@@ -82,8 +82,6 @@ join.on('text', (ctx) => {
     }
     if (!mem.term) {
         let term = parseInt(message.text);
-        if (isNaN(term))
-            return reply('لطفا یک عدد بفرستید.');
         mem.term = term;
         if (from.username == undefined) {
             return reply(`لطفا با کمک دکمه های زیر شماره همراه خود را به اشتراک بگذارید.(شما ID تلگرام برای تماس ندارید)`,
