@@ -33,7 +33,7 @@ bot.startWebhook(`/bot${TOKEN}`, null, PORT)
 bot.use(session())
 bot.use(stage.middleware())
 bot.start((ctx) => {
-    return ctx.replyWithMarkdown(startMessage);
+    return ctx.reply(startMessage);
 })
 bot.catch((err) => {
     console.log('Ooops you see this error : ', err)
@@ -59,7 +59,7 @@ join.on('text', (ctx) => {
     let session = ctx.session, message = ctx.message, reply = ctx.reply, from = ctx.from;
     if (message.text == '/cancel') {
         ctx.scene.leave();
-        return reply(stopMessage);
+        return reply(stopMessage,extra.markup(markup.removeKeyboard()));
     }
     if (message.entities) {
         return reply(`لطفا محتوای غیر مرتبط (هشتگ،دستور،لینک و...) ارسال نکنید. برای توقف دستور /cancel را ارسال فرمایید.`);
